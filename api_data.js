@@ -1945,14 +1945,14 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "query.queryFieldName",
             "description": "<p>查询字段名称 marketCenterName/createManName</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "query.queryValue",
             "description": "<p>查询字段值</p>"
           },
@@ -1966,7 +1966,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "array(object)",
-            "optional": false,
+            "optional": true,
             "field": "sort",
             "description": "<p>排序数组</p>"
           }
@@ -2974,7 +2974,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "array(object)",
-            "optional": false,
+            "optional": true,
             "field": "sort",
             "description": "<p>排序对象</p>"
           }
@@ -3247,7 +3247,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "query.queryFieldName",
             "description": "<p>查询字段名  dealerName/contactMan/contactNumber/dealerCode</p>"
           },
@@ -3268,7 +3268,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "array(object)",
-            "optional": false,
+            "optional": true,
             "field": "sort",
             "description": "<p>排序数组</p>"
           }
@@ -3541,7 +3541,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "query.queryFieldName",
             "description": "<p>查询字段 personName/cellPhone/email</p>"
           },
