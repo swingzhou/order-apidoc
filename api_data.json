@@ -865,7 +865,7 @@
             "group": "Parameter",
             "type": "string",
             "optional": true,
-            "field": "query.accountPeriodName",
+            "field": "query.name",
             "description": "<p>账期名称，模糊匹配</p>"
           },
           {
@@ -880,7 +880,7 @@
       "examples": [
         {
           "title": "Request-Example: ",
-          "content": "{\n  \"page\": 1,\n  \"query\": {\n    \"accountPeriodName\": \"string\",\n    \"vaildPeriod\": 0\n  },\n  \"size\": 10,\n  \"sort\": [\n    {\n      \"createDate\": \"desc\"\n    }\n  ]\n}",
+          "content": "{\n  \"page\": 1,\n  \"query\": {\n    \"name\": \"string\",\n    \"vaildPeriod\": 0\n  },\n  \"size\": 10,\n  \"sort\": [\n    {\n      \"createDate\": \"desc\"\n    }\n  ]\n}",
           "type": "json"
         }
       ]
@@ -904,13 +904,6 @@
           },
           {
             "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "data.current_page",
-            "description": "<p>当前页</p>"
-          },
-          {
-            "group": "Success 200",
             "type": "array(object)",
             "optional": true,
             "field": "data.list",
@@ -927,14 +920,14 @@
             "group": "Success 200",
             "type": "string",
             "optional": true,
-            "field": "data.list.accountPeriodId",
+            "field": "data.list.id",
             "description": "<p>账期标识</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": true,
-            "field": "data.list.accountPeriodName",
+            "field": "data.list.name",
             "description": "<p>账期名称</p>"
           },
           {
@@ -950,13 +943,6 @@
             "optional": true,
             "field": "data.list.validPeriod",
             "description": "<p>账期期限</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "data.per_page",
-            "description": "<p>页面大小</p>"
           },
           {
             "group": "Success 200",
@@ -991,7 +977,7 @@
       "examples": [
         {
           "title": "Success-Response: ",
-          "content": "{ \"code\": \"string\", \"data\": { \"current_page\": 0, \"list\": [ {\n\"accountNum\": 0, \"accountPeriodId\": \"string\", \"accountPeriodName\": \"string\", \"lastUpdateDate\":\n0, \"validPeriod\": 0 } ], \"per_page\": 0, \"count\": 0 }, \"msg\": \"string\", \"responseTime\":\n\"2019-01-03T09:47:28.923Z\", \"status\": \"string\" }",
+          "content": "{ \"code\": \"string\", \"data\": { \"list\": [ {\n\"accountNum\": 0, \"id\": \"string\", \"name\": \"string\", \"lastUpdateDate\":\n0, \"validPeriod\": 0 } ], \"count\": 0 }, \"msg\": \"string\", \"responseTime\":\n\"2019-01-03T09:47:28.923Z\", \"status\": \"string\" }",
           "type": "json"
         }
       ]
