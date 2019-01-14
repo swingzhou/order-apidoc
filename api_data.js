@@ -2064,7 +2064,7 @@ define({ "api": [
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.list.marketCenterName",
+            "field": "data.list.name",
             "description": "<p>营销中心名称</p>"
           },
           {
@@ -2093,7 +2093,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response: ",
-          "content": "HTTP/1.1 200 OK\n{\n   \"responseTime\": \"2019-01-10T09:20:30.193+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"marketCenterId\": \"111222000000000000000000\",\n         \"marketCenterName\": \"贺春宏\",\n         \"createDate\": 1546680210313,\n         \"createMan\": \"1207d2b5aa9f0200\",\n         \"createManName\": \"hyhtest\"\n       }\n     ],\n     \"count\": 1,\n     \"current_page\": 0,\n     \"per_page\": 10\n   }\n }",
+          "content": "HTTP/1.1 200 OK\n{\n   \"responseTime\": \"2019-01-10T09:20:30.193+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"marketCenterId\": \"111222000000000000000000\",\n         \"name\": \"张三\",\n         \"createDate\": 1546680210313,\n         \"createMan\": \"1207d2b5aa9f0200\",\n         \"createManName\": \"hyhtest\"\n       }\n     ],\n     \"count\": 1,\n     \"current_page\": 0,\n     \"per_page\": 10\n   }\n }",
           "type": "json"
         }
       ]
