@@ -3779,13 +3779,6 @@ define({ "api": [
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.list.department",
-            "description": "<p>所在部门</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "string",
-            "optional": false,
             "field": "data.list.id",
             "description": "<p>关联标识</p>"
           },
@@ -3836,7 +3829,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response: ",
-          "content": "HTTP/1.1 200 OK \n* {\n  \"code\": \"string\",\n  \"data\": {\n    \"count\": 0,\n    \"list\": [\n      {\n        \"cellPhone\": \"string\",\n        \"createDate\": 0,\n        \"department\": \"string\",\n        \"email\": \"string\",\n        \"id\": \"string\",\n        \"marketCenterId\": \"string\",\n        \"personName\": \"string\",\n        \"psrsonId\": \"string\"\n      }\n    ],\n  },\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-01-08T11:54:17.221Z\",\n  \"status\": \"string\"\n}",
+          "content": "HTTP/1.1 200 OK \n* {\n  \"code\": \"string\",\n  \"data\": {\n    \"count\": 0,\n    \"list\": [\n      {\n        \"cellPhone\": \"string\",\n        \"createDate\": 0,\n        \"email\": \"string\",\n        \"id\": \"string\",\n        \"marketCenterId\": \"string\",\n        \"personName\": \"string\",\n        \"psrsonId\": \"string\"\n      }\n    ],\n  },\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-01-08T11:54:17.221Z\",\n  \"status\": \"string\"\n}",
           "type": "json"
         }
       ]
