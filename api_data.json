@@ -4541,73 +4541,31 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "array(object)",
-            "optional": false,
-            "field": "marketCenterPersonDtos",
-            "description": "<p>营销中心人员数组</p>"
-          },
-          {
-            "group": "Parameter",
             "type": "string",
             "optional": false,
-            "field": "marketCenterPersonDtos.cellPhone",
-            "description": "<p>手机号码</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "long",
-            "optional": true,
-            "field": "marketCenterPersonDtos.createDate",
-            "description": "<p>创建日期</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": true,
-            "field": "marketCenterPersonDtos.createMan",
-            "description": "<p>创建者标识</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "marketCenterPersonDtos.department",
-            "description": "<p>所在部门</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "marketCenterPersonDtos.email",
-            "description": "<p>邮箱</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "marketCenterPersonDtos.marketCenterId",
+            "field": "marketCenterId",
             "description": "<p>营销中心标识</p>"
           },
           {
             "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "marketCenterPersonDtos.personId",
-            "description": "<p>人员标识</p>"
+            "type": "array(string)",
+            "optional": true,
+            "field": "personIds",
+            "description": "<p>人员标识数组</p>"
           },
           {
             "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "marketCenterPersonDtos.personName",
-            "description": "<p>人员姓名</p>"
+            "type": "array(string)",
+            "optional": true,
+            "field": "positionIds",
+            "description": "<p>岗位标识数组</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n   \"marketCenterPersonDtos\": [\n     {\n       \"cellPhone\": \"13443216543\",\n       \"department\": \"研发部\",\n       \"marketCenterId\": \"qwert\",\n       \"personId\": \"zsw21qe2w\",\n       \"personName\": \"张三\",\n       \"email\":\"1564324513@qq.com\"\n     },{\n       \"cellPhone\": \"13443216543\",\n       \"department\": \"人事部\",\n       \"marketCenterId\": \"11hy6tfs\",\n       \"personId\": \"qwertyuip\",\n       \"personName\": \"李四\",\n       \"email\":\"987654565@qq.com\"\n     }\n   ]\n}",
+          "content": "{\n  \"marketCenterId\": \"string\",\n  \"personIds\": [\n    \"string\"\n  ],\n  \"positionIds\": [\n    \"string\"\n  ]\n}",
           "type": "json"
         }
       ]
@@ -4624,79 +4582,65 @@
           },
           {
             "group": "Success 200",
-            "type": "object",
+            "type": "array(object)",
             "optional": false,
             "field": "data",
             "description": "<p>返回数据</p>"
           },
           {
             "group": "Success 200",
-            "type": "array(object)",
-            "optional": false,
-            "field": "data.marketCenterPersonDtos",
-            "description": "<p>营销中心人员数组</p>"
-          },
-          {
-            "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.marketCenterPersonDtos.cellPhone",
+            "field": "data.cellPhone",
             "description": "<p>手机号码</p>"
           },
           {
             "group": "Success 200",
             "type": "long",
             "optional": false,
-            "field": "data.marketCenterPersonDtos.createDate",
+            "field": "data.createDate",
             "description": "<p>创建日期</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.marketCenterPersonDtos.createMan",
+            "field": "data.createMan",
             "description": "<p>创建者标识</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.marketCenterPersonDtos.department",
-            "description": "<p>所在部门</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "string",
-            "optional": false,
-            "field": "data.marketCenterPersonDtos.id",
+            "field": "data.id",
             "description": "<p>关联标识</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.marketCenterPersonDtos.marketCenterId",
+            "field": "data.marketCenterId",
             "description": "<p>营销中心标识</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.marketCenterPersonDtos.personId",
+            "field": "data.personId",
             "description": "<p>人员标识</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.marketCenterPersonDtos.personName",
+            "field": "data.personName",
             "description": "<p>人员姓名</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.marketCenterPersonDtos.email",
+            "field": "data.email",
             "description": "<p>邮箱</p>"
           },
           {
@@ -4725,7 +4669,7 @@
       "examples": [
         {
           "title": "Success-Response: ",
-          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-11T02:36:39.726+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"marketCenterPersonDtos\": [\n       {\n         \"marketCenterId\": \"qwert\",\n         \"personId\": \"zsw21qe2w\",\n         \"personName\": \"张三\",\n         \"cellPhone\": \"13443216543\",\n         \"department\": \"研发部\",\n         \"email\":\"1564324513@qq.com\",\n         \"id\": \"5c380137e5039337e4d30f5e\",\n         \"createDate\": 1547174199657,\n         \"createMan\": \"-1\"\n       },\n       {\n         \"marketCenterId\": \"11hy6tfs\",\n         \"personId\": \"qwertyuip\",\n         \"personName\": \"李四\",\n         \"cellPhone\": \"13443216543\",\n         \"department\": \"人事部\",\n         \"email\":\"987654565@qq.com\",\n         \"id\": \"5c380137e5039337e4d30f5f\",\n         \"createDate\": 1547174199657,\n         \"createMan\": \"-1\"\n       }\n     ]\n   }\n}",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-11T02:36:39.726+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": [\n       {\n         \"marketCenterId\": \"qwert\",\n         \"personId\": \"zsw21qe2w\",\n         \"personName\": \"张三\",\n         \"cellPhone\": \"13443216543\",\n         \"email\":\"1564324513@qq.com\",\n         \"id\": \"5c380137e5039337e4d30f5e\",\n         \"createDate\": 1547174199657,\n         \"createMan\": \"-1\"\n       },\n       {\n         \"marketCenterId\": \"11hy6tfs\",\n         \"personId\": \"qwertyuip\",\n         \"personName\": \"李四\",\n         \"cellPhone\": \"13443216543\",\n         \"email\":\"987654565@qq.com\",\n         \"id\": \"5c380137e5039337e4d30f5f\",\n         \"createDate\": 1547174199657,\n         \"createMan\": \"-1\"\n       }\n   ]\n}",
           "type": "json"
         }
       ]
@@ -4746,13 +4690,6 @@
             "optional": false,
             "field": "20111002",
             "description": "<p>marketcenter id is empty</p>"
-          },
-          {
-            "group": "errorCode",
-            "type": "string",
-            "optional": false,
-            "field": "20111003",
-            "description": "<p>person id is empty</p>"
           },
           {
             "group": "errorCode",
