@@ -373,6 +373,13 @@
             "group": "errorCode",
             "type": "string",
             "optional": false,
+            "field": "20107011",
+            "description": "<p>账期名称重复</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
             "field": "000000",
             "description": "<p>请求成功</p>"
           }
@@ -880,7 +887,7 @@
       "examples": [
         {
           "title": "Request-Example: ",
-          "content": "{\n  \"page\": 1,\n  \"query\": {\n    \"name\": \"string\",\n    \"vaildPeriod\": 0\n  },\n  \"size\": 10,\n  \"sort\": [\n    {\n      \"createDate\": \"desc\"\n    }\n  ]\n}",
+          "content": "{\n  \"page\": 1,\n  \"query\": {\n    \"name\": \"string\",\n    \"vaildPeriod\": 0\n  },\n  \"size\": 10,\n  \"sort\": [\n    {\n      \"updateDate\": \"desc\"\n    }\n  ]\n}",
           "type": "json"
         }
       ]
