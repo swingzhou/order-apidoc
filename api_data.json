@@ -1533,6 +1533,1105 @@
     }
   },
   {
+    "type": "GET",
+    "url": "/v1/xlink-order-rest/cashPoolController/getCashPoolAdjustRequestInfo/{id}",
+    "title": "获取资金池调整申请记录",
+    "name": "getCashPoolAdjustRequestInfo",
+    "group": "CashPoolRestController",
+    "description": "<p>获取资金池调整申请记录</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "id",
+            "description": "<p>资金池调整申请标识</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>返回数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.changeType",
+            "description": "<p>调整类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.createDate",
+            "description": "<p>申请日期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.checkId",
+            "description": "<p>审核标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.createMan",
+            "description": "<p>申请人</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.createManName",
+            "description": "<p>申请人名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.customId",
+            "description": "<p>客户标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.customName",
+            "description": "<p>客户名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.customType",
+            "description": "<p>客户类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.id",
+            "description": "<p>资金池调整申请标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.money",
+            "description": "<p>金额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.reason",
+            "description": "<p>申请原因</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.status",
+            "description": "<p>状态</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T07:10:06.651+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"id\": \"5c480edebbe48705c4bd32d8\",\n     \"customName\": \"依赖大客户、经销商\",\n     \"customId\": null,\n     \"customType\": null,\n     \"changeType\": \"ADD\",\n     \"money\": 1000,\n     \"createMan\": \"1207d2b61cde9000\",\n     \"createManName\": \"xuqian\",\n     \"createDate\": 1548226270667,\n     \"status\": \"PENDING_CHECK\",\n     \"reason\": \"1111\",\n     \"checkId\": \"11111\"\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20112001",
+            "description": "<p>资金池调整记录标识为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20111003",
+            "description": "<p>获取资金池详情失败</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ],
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/CashPoolRestController.java",
+    "groupTitle": "CashPoolRestController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/v1/xlink-order-rest/cashPoolController/listCashPoolAdjustRequests",
+    "title": "分页查询资金池调整申请",
+    "name": "listCashPoolAdjustRequests",
+    "group": "CashPoolRestController",
+    "description": "<p>分页查询资金池调整申请</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "page",
+            "description": "<p>页数</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "size",
+            "description": "<p>页大小</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "array(object)",
+            "optional": true,
+            "field": "sort",
+            "description": "<p>排序数组</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "query",
+            "description": "<p>分页查询条件</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "query.changeType",
+            "description": "<p>调整类型</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "long",
+            "optional": false,
+            "field": "query.createDateEnd",
+            "description": "<p>申请时间结束点</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "long",
+            "optional": false,
+            "field": "query.createDateStart",
+            "description": "<p>申请时间起始点</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "query.queryFieldName",
+            "description": "<p>分页查询字段名称</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "query.queryValue",
+            "description": "<p>分页查询字段值</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "query.status",
+            "description": "<p>状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n   \"page\": 1,\n   \"size\": 10,\n   \"sort\": [\n     {\n       \"additionalProp1\": \"desc\",\n       \"additionalProp2\": \"asc\",\n     }\n   ],\n   \"query\": {\n     \"queryFieldName\": \"string\",\n     \"queryValue\": \"string\",\n     \"changeType\": \"ADD\",\n     \"createDateStart\": 0,\n     \"createDateEnd\": 0,\n     \"status\": \"PENDING_CHECK\"\n   }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>返回数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.count",
+            "description": "<p>总数</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array(object)",
+            "optional": false,
+            "field": "data.list",
+            "description": "<p>返回数据集合</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.changeType",
+            "description": "<p>调整类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.list.createDate",
+            "description": "<p>创建日期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.createMan",
+            "description": "<p>创建者标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.createManName",
+            "description": "<p>创建者标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.customId",
+            "description": "<p>客户标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.customName",
+            "description": "<p>客户名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.customType",
+            "description": "<p>客户类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.id",
+            "description": "<p>资金池调整申请标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.list.money",
+            "description": "<p>金额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.status",
+            "description": "<p>状态</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T06:58:57.631+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"id\": \"5c480edebbe48705c4bd32d8\",\n         \"customName\": \"依赖大客户、经销商\",\n         \"customId\": null,\n         \"customType\": null,\n         \"changeType\": \"ADD\",\n         \"money\": 1000,\n         \"createMan\": \"1207d2b61cde9000\",\n         \"createManName\": \"xuqian\",\n         \"createDate\": 1548226270667,\n         \"status\": \"PENDING_CHECK\"\n       }\n     ],\n     \"count\": 1\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "10000001",
+            "description": "<p>空参数</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20112003",
+            "description": "<p>资金调整申请分页查询条件为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20112004",
+            "description": "<p>查询客户列表失败</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20112005",
+            "description": "<p>分页查询资金池体调整失败</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ],
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/CashPoolRestController.java",
+    "groupTitle": "CashPoolRestController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/v1/xlink-order-rest/cashPoolController/listCashPoolChangeRecords",
+    "title": "分页查询资金池变更记录",
+    "name": "listCashPoolChangeRecords",
+    "group": "CashPoolRestController",
+    "description": "<p>分页查询资金池变更记录</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "page",
+            "description": "<p>页数</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "size",
+            "description": "<p>页大小</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "array(object)",
+            "optional": true,
+            "field": "sort",
+            "description": "<p>排序数组</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "query",
+            "description": "<p>分页查询条件</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "query.cashPoolId",
+            "description": "<p>资金池标识</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "long",
+            "optional": false,
+            "field": "query.changeDateEnd",
+            "description": "<p>变更时间结束点</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "long",
+            "optional": false,
+            "field": "query.changeDateStart",
+            "description": "<p>变更时间起始点</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "query.changeOrigin",
+            "description": "<p>变更来源</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "query.changeType",
+            "description": "<p>变更类型</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n   \"page\": 1,\n   \"size\": 10,\n   \"sort\": [\n     {\n       \"additionalProp1\": \"desc\",\n       \"additionalProp2\": \"asc\",\n     }\n   ],\n   \"query\": {\n     \"changeDateStart\": 0,\n     \"changeDateEnd\": 0,\n     \"changeType\": \"ADD\",\n     \"changeOrigin\": \"SYSTEM_BILL\",\n     \"cashPoolId\": \"string\"\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>返回数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.count",
+            "description": "<p>总数</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array(object)",
+            "optional": false,
+            "field": "data.list",
+            "description": "<p>返回数据集合</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.list.balance",
+            "description": "<p>变更后余额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.cashPoolId",
+            "description": "<p>资金池标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.list.changeDate",
+            "description": "<p>变更时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.list.changeMoney",
+            "description": "<p>变更金额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.changeOrigin",
+            "description": "<p>变更来源</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.changeType",
+            "description": "<p>变更类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T08:34:48.066+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"cashPoolId\": \"5c404c7a23b4eb2f844e5d44\",\n         \"balance\": 110,\n         \"changeOrigin\": \"SYSTEM_BILL\",\n         \"changeMoney\": 110,\n         \"changeType\": \"ADD\",\n         \"changeDate\": 1110\n       }\n     ],\n     \"count\": 1\n   }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "10000001",
+            "description": "<p>空参数</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20111002",
+            "description": "<p>资金池标识为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20113001",
+            "description": "<p>获取资金池变更记录列表失败</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ],
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/CashPoolRestController.java",
+    "groupTitle": "CashPoolRestController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/v1/xlink-order-rest/cashPoolController/listCashPools",
+    "title": "分页查询资金池记录",
+    "name": "listCashPools",
+    "group": "CashPoolRestController",
+    "description": "<p>分页查询资金池记录</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "page",
+            "description": "<p>页数</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "size",
+            "description": "<p>页大小</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "array(object)",
+            "optional": true,
+            "field": "sort",
+            "description": "<p>排序数组</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "query",
+            "description": "<p>分页查询条件</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "query.queryFieldName",
+            "description": "<p>分页查询字段名称</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "query.queryValue",
+            "description": "<p>分页查询字段值</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n   \"page\": 1,\n   \"size\": 10,\n   \"query\": {\n   \"queryFieldName\": \"string\",\n   \"queryValue\": \"string\"\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>返回数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.count",
+            "description": "<p>总数</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array(object)",
+            "optional": false,
+            "field": "data.list",
+            "description": "<p>返回数据集合</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.list.amount",
+            "description": "<p>资金池余额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.customId",
+            "description": "<p>客户标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.customName",
+            "description": "<p>客户名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.customType",
+            "description": "<p>客户类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.id",
+            "description": "<p>资金池记录标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.list.updateDate",
+            "description": "<p>最后更新时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T07:43:15.558+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"id\": \"5c40425723b4eb0f081cedf9\",\n         \"customName\": \"依赖经销商大客户\",\n         \"customId\": \"string\",\n         \"customType\": \"BIG_CUSTOM\",\n         \"amount\": 0,\n         \"updateDate\": 0\n       },\n       {\n         \"id\": \"5c40456323b4eb2f844e5d38\",\n         \"customName\": \"依赖经销商大客户\",\n         \"customId\": \"string\",\n         \"customType\": \"BIG_CUSTOM\",\n         \"amount\": 0,\n         \"updateDate\": 0\n       }\n     ],\n     \"count\": 14\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "10000001",
+            "description": "<p>空参数</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20111004",
+            "description": "<p>资金池记录分页查询条件为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20111001",
+            "description": "<p>获取资金池列表失败</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ],
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/CashPoolRestController.java",
+    "groupTitle": "CashPoolRestController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
     "type": "POST",
     "url": "/v1/xlink-order-rest/marketCenterManager/addMarketCenterManger",
     "title": "添加营销中心",
@@ -4734,6 +5833,1007 @@
     "version": "0.0.0",
     "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/MarketCenterUserManagerController.java",
     "groupTitle": "MarketCenterUserManagerController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "GET",
+    "url": "/v1/xlink-order-rest/orderAccountPeriodController/findOrderAccoundPeriodDetailsById/{id}",
+    "title": "查询账期详情",
+    "name": "findOrderAccoundPeriodDetailsById",
+    "group": "OrderAccountPeriodRestController",
+    "description": "<p>查询账期详情</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "id",
+            "description": "<p>账期标识</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>返回数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.accountPeriodId",
+            "description": "<p>账期编号</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.amount",
+            "description": "<p>账期总额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.customId",
+            "description": "<p>customId 客户标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.customName",
+            "description": "<p>客户名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.customType",
+            "description": "<p>客户类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.endDate",
+            "description": "<p>账期结束日期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.name",
+            "description": "<p>账期名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array(object)",
+            "optional": false,
+            "field": "data.orderAccountDetailDtos",
+            "description": "<p>回款明细列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.orderAccountDetailDtos.acceptMoney",
+            "description": "<p>已回款金额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.orderAccountDetailDtos.createDate",
+            "description": "<p>创建日期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.orderAccountDetailDtos.createMan",
+            "description": "<p>创建者标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.orderAccountDetailDtos.id",
+            "description": "<p>回款明细标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.orderAccountDetailDtos.orderAccountId",
+            "description": "<p>账期标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.orderAccountDetailDtos.payDate",
+            "description": "<p>回款日期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.orderAccountDetailDtos.payMoney",
+            "description": "<p>账期金额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "data.orderAccountDetailDtos.payNode",
+            "description": "<p>回款节点</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.orderAccountDetailDtos.payRadio",
+            "description": "<p>回款比例</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "data.orderAccountDetailDtos.periodOrder",
+            "description": "<p>期数</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.orderAccountDetailDtos.status",
+            "description": "<p>订单账期明细状态</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.orderAccountDetailDtos.statusDate",
+            "description": "<p>转台更新时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.orderId",
+            "description": "<p>订单标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.payRadio",
+            "description": "<p>已回款比例</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array(object)",
+            "optional": false,
+            "field": "data.payRecords",
+            "description": "<p>回款记录列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.payRecords.createDate",
+            "description": "<p>创建日期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.payRecords.createMan",
+            "description": "<p>创建者标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.payRecords.id",
+            "description": "<p>回款记录标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.payRecords.orderAccountDetailId",
+            "description": "<p>回款明细标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.payRecords.orderAccountId",
+            "description": "<p>账期标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.payRecords.payDate",
+            "description": "<p>回款时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.payRecords.payMoney",
+            "description": "<p>回款金额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "data.period",
+            "description": "<p>账期期限</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.receivedMoney",
+            "description": "<p>已回款金额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.remainMoney",
+            "description": "<p>剩余回款金额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.startDate",
+            "description": "<p>账期起始日期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.status",
+            "description": "<p>订单账期状态</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T02:41:01.278+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"accountPeriodId\": \"1323432\",\n     \"name\": \"账期名称\",\n     \"period\": 1,\n     \"amount\": 10.36,\n     \"receivedMoney\": 0.36,\n     \"payRadio\": 0.03,\n     \"remainMoney\": 10,\n     \"status\": \"RUNNING\",\n     \"orderId\": \"5c3efe99a17e7019de0bc507\",\n     \"customName\": null,\n     \"customId\": null,\n     \"customType\": null,\n     \"startDate\": 1548864000000,\n     \"endDate\": 1551283200000,\n     \"orderAccountDetailDtos\": [\n       {\n        \"orderAccountId\": \"5c443f7223b4eb159013b21e\",\n         \"periodOrder\": 0,\n         \"payDate\": 0,\n         \"payNode\": 0,\n         \"payRadio\": 55.5,\n         \"payMoney\": 0,\n         \"acceptMoney\": 0,\n         \"status\": \"FINISHED\",\n         \"statusDate\": null,\n         \"id\": \"5c443fd723b4eb159013b21f\",\n         \"createDate\": 1547976663728,\n         \"createMan\": \"-1\"\n       }\n     \"payRecords\": [\n       {\n         \"payMoney\": 18232111221,\n         \"payDate\": 186727346211,\n         \"orderAccountId\": \"5c443f7223b4eb159013b21e\",\n         \"orderAccountDetailId\": \"5c443fd723b4eb159013b21f\",\n         \"createDate\": 1548214235714,\n         \"createMan\": \"-1\"\n       }\n     ]\n   }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20104004",
+            "description": "<p>id不能为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20104005",
+            "description": "<p>获取账期明细列表失败</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ],
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/OrderAccountPeriodRestController.java",
+    "groupTitle": "OrderAccountPeriodRestController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/v1/xlink-order-rest/orderAccountPeriodController/listOrderAccountDetails",
+    "title": "分页查询回款管理",
+    "name": "listOrderAccountDetails",
+    "group": "OrderAccountPeriodRestController",
+    "description": "<p>分页查询回款管理</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "page",
+            "description": "<p>页数</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "size",
+            "description": "<p>页大小</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "array(object)",
+            "optional": true,
+            "field": "sort",
+            "description": "<p>排序对象</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "query",
+            "description": "<p>分页查询参数</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "long",
+            "optional": true,
+            "field": "query.payDateEnd",
+            "description": "<p>回款时间结束点</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "long",
+            "optional": true,
+            "field": "query.payDateStart",
+            "description": "<p>回款时间起始点</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "query.queryFieldName",
+            "description": "<p>分页查询字段名称</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "query.queryValue",
+            "description": "<p>分页查询字段值</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "query.status",
+            "description": "<p>订单账期明细状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n   \"page\": 1,\n   \"size\": 10,\n   \"sort\": [\n     {\n       \"additionalProp1\": \"desc\",\n       \"additionalProp2\": \"asc\"\n     }\n   ],\n   \"query\": {\n     \"queryFieldName\": \"string\",\n     \"queryValue\": \"string\",\n     \"status\": \"NOT_START\",\n     \"payDateStart\": 0,\n     \"payDateEnd\": 0\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>返回数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.count",
+            "description": "<p>总数</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array(object)",
+            "optional": false,
+            "field": "data.list",
+            "description": "<p>数据对象集合</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.list.acceptMoney",
+            "description": "<p>回款金额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.customId",
+            "description": "<p>客户标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.customName",
+            "description": "<p>客户名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.customType",
+            "description": "<p>客户类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.name",
+            "description": "<p>账期方式</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.orderAccountId",
+            "description": "<p>账期标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.list.payDate",
+            "description": "<p>回款日期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.list.payRadio",
+            "description": "<p>回款比例</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "data.list.periodOrder",
+            "description": "<p>期数</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.status",
+            "description": "<p>订单账期明细状态</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T03:39:47.918+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"orderAccountId\": \"5c443f7223b4eb159013b21e\",\n         \"acceptMoney\": 0,\n         \"payRadio\": 55.5,\n         \"periodOrder\": 0,\n         \"payDate\": 0,\n         \"name\": \"账期名称\",\n         \"customId\": null,\n         \"customType\": null,\n         \"customName\": null,\n         \"status\": \"FINISHED\"\n       }\n     ],\n     \"count\": 3,\n     \"per_page\": 10\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "10000001",
+            "description": "<p>空参数</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20105002",
+            "description": "<p>回款管理分页查询条件为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20105003",
+            "description": "<p>获取回款管理列表失败</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ],
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/OrderAccountPeriodRestController.java",
+    "groupTitle": "OrderAccountPeriodRestController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/v1/xlink-order-rest/orderAccountPeriodController/listOrderAccountPeriods",
+    "title": "分布查询账期管理",
+    "name": "listOrderAccountPeriods",
+    "group": "OrderAccountPeriodRestController",
+    "description": "<p>分页查询账期管理</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "page",
+            "description": "<p>页数</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "size",
+            "description": "<p>页大小</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "array(object)",
+            "optional": true,
+            "field": "sort",
+            "description": "<p>排序对象</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "query",
+            "description": "<p>分页查询条件</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "query.queryFieldName",
+            "description": "<p>分页查询字段名称</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "query.queryValue",
+            "description": "<p>分页查询字段值</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "long",
+            "optional": true,
+            "field": "query.startDateEnd",
+            "description": "<p>账期时间结束点</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "long",
+            "optional": true,
+            "field": "query.startDateStart",
+            "description": "<p>账期时间起始点</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "query.status",
+            "description": "<p>订单账期状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n   \"page\": 1,\n   \"size\": 10,\n   \"sort\": [\n     {\n       \"additionalProp1\": \"desc\",\n       \"additionalProp2\": \"asc\"\n     }\n   ],\n   \"query\": {\n     \"queryFieldName\": \"string\",\n     \"queryValue\": \"string\",\n     \"status\": \"RUNNING\",\n     \"startDateStart\": 0,\n     \"startDateEnd\": 0\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>返回数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.count",
+            "description": "<p>总数</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array(object)",
+            "optional": false,
+            "field": "data.list",
+            "description": "<p>数据集合</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.accountPeriodId",
+            "description": "<p>账期编号</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.list.amount",
+            "description": "<p>账期总额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.customName",
+            "description": "<p>客户名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.name",
+            "description": "<p>账期名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.orderId",
+            "description": "<p>来源订单</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.list.payRadio",
+            "description": "<p>已回款比例</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.list.startDate",
+            "description": "<p>账期时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.status",
+            "description": "<p>订单账期状态</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T02:31:28.561+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"accountPeriodId\": \"1323432\",\n         \"name\": \"账期名称\",\n         \"amount\": 10.36,\n         \"payRadio\": 0.03,\n         \"orderId\": \"5c3efe99a17e7019de0bc507\",\n         \"customName\": null,\n         \"status\": \"RUNNING\",\n         \"startDate\": 1548864000000\n       }\n     ],\n     \"count\": 1,\n     \"per_page\": 10\n   }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "10000001",
+            "description": "<p>空参数</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20104002",
+            "description": "<p>账期管理分页查询条件为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20104003",
+            "description": "<p>账期管理分页查询失败</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ],
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/OrderAccountPeriodRestController.java",
+    "groupTitle": "OrderAccountPeriodRestController",
     "header": {
       "fields": {
         "Header": [
