@@ -1533,8 +1533,302 @@
     }
   },
   {
+    "type": "POST",
+    "url": "/v1/xlink-order-rest/cashPool/addCashPoolAdjustRequest",
+    "title": "添加资金池调整申请",
+    "name": "addCashPoolAdjustRequest",
+    "group": "CashPoolRestController",
+    "description": "<p>添加资金池调整申请</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "changeType",
+            "description": "<p>调整类型(ADD/增加 SUB减少)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "customId",
+            "description": "<p>客户标识</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "customType",
+            "description": "<p>客户类型</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "money",
+            "description": "<p>调整金额</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "reason",
+            "description": "<p>调整原因</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n   \"customId\": \"string\",\n   \"customType\": \"BIG_CUSTOM\",\n   \"changeType\": \"ADD\",\n   \"money\": 0,\n   \"reason\": \"string\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>返回数据对象</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.cashPoolId",
+            "description": "<p>资金池标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.changeType",
+            "description": "<p>调整类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.checkId",
+            "description": "<p>审核标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.createDate",
+            "description": "<p>创建日期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.createMan",
+            "description": "<p>创建者标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.id",
+            "description": "<p>资金池调整申请标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.money",
+            "description": "<p>调整金额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.reason",
+            "description": "<p>调整原因</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.status",
+            "description": "<p>状态</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.statusDate",
+            "description": "<p>状态变更时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-25T09:55:25.571+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"cashPoolId\": \"5c404c7a23b4eb2f844e5d44\",\n     \"changeType\": \"ADD\",\n     \"money\": 110,\n     \"statusDate\": null,\n     \"status\": \"PENDING_CHECK\",\n     \"reason\": \"与U9不符合\",\n     \"checkId\": null,\n     \"id\": \"5c4add0dbbe4875218cc8c04\",\n     \"createDate\": 1548410125436,\n     \"createMan\": \"-1\"\n   }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20112006",
+            "description": "<p>添加资金调整申请失败</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20112007",
+            "description": "<p>客户或经销商信息为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20112008",
+            "description": "<p>调整类型为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20112009",
+            "description": "<p>调整金额为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20112010",
+            "description": "<p>调整原因为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20112011",
+            "description": "<p>查询资金池失败</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20112012",
+            "description": "<p>大客户/经销商只能有一个资金池</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ],
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/CashPoolRestController.java",
+    "groupTitle": "CashPoolRestController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
     "type": "GET",
-    "url": "/v1/xlink-order-rest/cashPoolController/getCashPoolAdjustRequestInfo/{id}",
+    "url": "/v1/xlink-order-rest/cashPool/getCashPoolAdjustRequestInfo/{id}",
     "title": "获取资金池调整申请记录",
     "name": "getCashPoolAdjustRequestInfo",
     "group": "CashPoolRestController",
@@ -1772,7 +2066,7 @@
   },
   {
     "type": "POST",
-    "url": "/v1/xlink-order-rest/cashPoolController/listCashPoolAdjustRequests",
+    "url": "/v1/xlink-order-rest/cashPool/listCashPoolAdjustRequests",
     "title": "分页查询资金池调整申请",
     "name": "listCashPoolAdjustRequests",
     "group": "CashPoolRestController",
@@ -2094,7 +2388,7 @@
   },
   {
     "type": "POST",
-    "url": "/v1/xlink-order-rest/cashPoolController/listCashPoolChangeRecords",
+    "url": "/v1/xlink-order-rest/cashPool/listCashPoolChangeRecords",
     "title": "分页查询资金池变更记录",
     "name": "listCashPoolChangeRecords",
     "group": "CashPoolRestController",
@@ -2374,7 +2668,7 @@
   },
   {
     "type": "POST",
-    "url": "/v1/xlink-order-rest/cashPoolController/listCashPools",
+    "url": "/v1/xlink-order-rest/cashPool/listCashPools",
     "title": "分页查询资金池记录",
     "name": "listCashPools",
     "group": "CashPoolRestController",
@@ -2566,6 +2860,237 @@
             "optional": false,
             "field": "20111001",
             "description": "<p>获取资金池列表失败</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ],
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/CashPoolRestController.java",
+    "groupTitle": "CashPoolRestController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/v1/xlink-order-rest/cashPool/updateCashPoolAdjustRequest",
+    "title": "修改资金池调整申请状态",
+    "name": "updateCashPoolAdjustRequest",
+    "group": "CashPoolRestController",
+    "description": "<p>修改资金池调整申请状态</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "id",
+            "description": "<p>资金池调整申请标识</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n \"id\":\"1111111\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>返回数据对象</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.cashPoolId",
+            "description": "<p>资金池标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.changeType",
+            "description": "<p>调整类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.checkId",
+            "description": "<p>审核标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.id",
+            "description": "<p>资金池调整申请标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "decimal(string)",
+            "optional": false,
+            "field": "data.money",
+            "description": "<p>调整金额</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.reason",
+            "description": "<p>调整原因</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.status",
+            "description": "<p>状态</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.statusDate",
+            "description": "<p>状态变更时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.updateDate",
+            "description": "<p>更新日期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.updateMan",
+            "description": "<p>更新者标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "HTTP/1.1 200 OK\n{\n   \"responseTime\": \"2019-01-25T10:40:16.017+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"cashPoolId\": \"5c404c7a23b4eb2f844e5d44\",\n     \"changeType\": \"ADD\",\n     \"money\": 110,\n     \"statusDate\": 1548412815138,\n     \"status\": \"CLOSED\",\n     \"reason\": \"与U9不符合\",\n     \"checkId\": null,\n     \"id\": \"5c4add0dbbe4875218cc8c04\",\n     \"updateDate\": 1548412815944,\n     \"updateMan\": \"-1\",\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20112001",
+            "description": "<p>资金池调整记录标识为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20112013",
+            "description": "<p>修改资金调整申请状态失败</p>"
           },
           {
             "group": "errorCode",
@@ -5863,7 +6388,7 @@
   },
   {
     "type": "GET",
-    "url": "/v1/xlink-order-rest/orderAccountPeriodController/findOrderAccoundPeriodDetailsById/{id}",
+    "url": "/v1/xlink-order-rest/orderAccountPeriod/findOrderAccoundPeriodDetailsById/{id}",
     "title": "查询账期详情",
     "name": "findOrderAccoundPeriodDetailsById",
     "group": "OrderAccountPeriodRestController",
@@ -6262,7 +6787,7 @@
   },
   {
     "type": "POST",
-    "url": "/v1/xlink-order-rest/orderAccountPeriodController/listOrderAccountDetails",
+    "url": "/v1/xlink-order-rest/orderAccountPeriod/listOrderAccountDetails",
     "title": "分页查询回款管理",
     "name": "listOrderAccountDetails",
     "group": "OrderAccountPeriodRestController",
@@ -6570,8 +7095,8 @@
   },
   {
     "type": "POST",
-    "url": "/v1/xlink-order-rest/orderAccountPeriodController/listOrderAccountPeriods",
-    "title": "分布查询账期管理",
+    "url": "/v1/xlink-order-rest/orderAccountPeriod/listOrderAccountPeriods",
+    "title": "分页查询账期管理",
     "name": "listOrderAccountPeriods",
     "group": "OrderAccountPeriodRestController",
     "description": "<p>分页查询账期管理</p>",
