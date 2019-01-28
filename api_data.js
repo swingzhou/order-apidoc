@@ -7169,7 +7169,7 @@ define({ "api": [
             "type": "string",
             "optional": true,
             "field": "query.status",
-            "description": "<p>订单账期状态</p>"
+            "description": "<p>订单账期状态  RUNNING(进行中) FINISHED(已完成) CLOSED( 已关闭)</p>"
           }
         ]
       },
@@ -7266,7 +7266,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "data.list.status",
-            "description": "<p>订单账期状态</p>"
+            "description": "<p>订单账期状态 RUNNING(进行中) FINISHED(已完成) CLOSED( 已关闭)</p>"
           },
           {
             "group": "Success 200",
