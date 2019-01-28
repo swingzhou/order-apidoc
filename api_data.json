@@ -2927,7 +2927,7 @@
   },
   {
     "type": "POST",
-    "url": "/v1/xlink-order-rest/cashPool/updateCashPoolAdjustRequest",
+    "url": "/v1/xlink-order-rest/cashPool/updateCashPoolAdjustRequest/{id}",
     "title": "修改资金池调整申请状态",
     "name": "updateCashPoolAdjustRequest",
     "group": "CashPoolRestController",
