@@ -6406,7 +6406,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "id",
-            "description": "<p>账期标识</p>"
+            "description": "<p>订单账期标识</p>"
           }
         ]
       }
@@ -6699,7 +6699,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response: ",
-          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T02:41:01.278+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"accountPeriodId\": \"1323432\",\n     \"name\": \"账期名称\",\n     \"period\": 1,\n     \"amount\": 10.36,\n     \"receivedMoney\": 0.36,\n     \"payRadio\": 0.03,\n     \"remainMoney\": 10,\n     \"status\": \"RUNNING\",\n     \"orderId\": \"5c3efe99a17e7019de0bc507\",\n     \"customName\": null,\n     \"customId\": null,\n     \"customType\": null,\n     \"startDate\": 1548864000000,\n     \"endDate\": 1551283200000,\n     \"orderAccountDetailDtos\": [\n       {\n        \"orderAccountId\": \"5c443f7223b4eb159013b21e\",\n         \"periodOrder\": 0,\n         \"payDate\": 0,\n         \"payNode\": 0,\n         \"payRadio\": 55.5,\n         \"payMoney\": 0,\n         \"acceptMoney\": 0,\n         \"status\": \"FINISHED\",\n         \"statusDate\": null,\n         \"id\": \"5c443fd723b4eb159013b21f\",\n         \"createDate\": 1547976663728,\n         \"createMan\": \"-1\"\n       }\n     \"payRecords\": [\n       {\n         \"payMoney\": 18232111221,\n         \"payDate\": 186727346211,\n         \"orderAccountId\": \"5c443f7223b4eb159013b21e\",\n         \"orderAccountDetailId\": \"5c443fd723b4eb159013b21f\",\n         \"createDate\": 1548214235714,\n         \"createMan\": \"-1\"\n       }\n     ]\n   }\n }",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T02:41:01.278+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"accountPeriodId\": \"1323432\",\n     \"name\": \"账期名称\",\n     \"period\": 1,\n     \"amount\": 10.36,\n     \"receivedMoney\": 0.36,\n     \"payRadio\": 0.03,\n     \"remainMoney\": 10,\n     \"status\": \"RUNNING\",\n     \"orderId\": \"5c3efe99a17e7019de0bc507\",\n     \"customName\": null,\n     \"customId\": null,\n     \"customType\": null,\n     \"startDate\": 1548864000000,\n     \"endDate\": 1551283200000,\n     \"orderAccountDetailDtos\": [\n       {\n         \"orderAccountId\": \"5c443f7223b4eb159013b21e\",\n         \"periodOrder\": 0,\n         \"payDate\": 0,\n         \"payNode\": 0,\n         \"payRadio\": 55.5,\n         \"payMoney\": 0,\n         \"acceptMoney\": 0,\n         \"status\": \"FINISHED\",\n         \"statusDate\": null,\n         \"id\": \"5c443fd723b4eb159013b21f\",\n         \"createDate\": 1547976663728,\n         \"createMan\": \"-1\"\n       }\n     \"payRecords\": [\n       {\n         \"payMoney\": 18232111221,\n         \"payDate\": 186727346211,\n         \"orderAccountId\": \"5c443f7223b4eb159013b21e\",\n         \"orderAccountDetailId\": \"5c443fd723b4eb159013b21f\",\n         \"createDate\": 1548214235714,\n         \"createMan\": \"-1\"\n       }\n     ]\n   }\n }",
           "type": "json"
         }
       ]
@@ -7244,6 +7244,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "string",
             "optional": false,
+            "field": "data.list.id",
+            "description": "<p>账期标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
             "field": "data.list.orderId",
             "description": "<p>来源订单</p>"
           },
@@ -7294,7 +7301,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response: ",
-          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T02:31:28.561+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"accountPeriodId\": \"1323432\",\n         \"name\": \"账期名称\",\n         \"amount\": 10.36,\n         \"payRadio\": 0.03,\n         \"orderId\": \"5c3efe99a17e7019de0bc507\",\n         \"customName\": null,\n         \"status\": \"RUNNING\",\n         \"startDate\": 1548864000000\n       }\n     ],\n     \"count\": 1,\n     \"per_page\": 10\n   }\n }",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T02:31:28.561+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"id\":\"115c443f7223b4eb159013b21e\",\n         \"accountPeriodId\": \"1323432\",\n         \"name\": \"账期名称\",\n         \"amount\": 10.36,\n         \"payRadio\": 0.03,\n         \"orderId\": \"5c3efe99a17e7019de0bc507\",\n         \"customName\": null,\n         \"status\": \"RUNNING\",\n         \"startDate\": 1548864000000\n       }\n     ],\n     \"count\": 1,\n     \"per_page\": 10\n   }\n }",
           "type": "json"
         }
       ]
