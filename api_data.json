@@ -2112,7 +2112,7 @@
             "type": "string",
             "optional": false,
             "field": "query.changeType",
-            "description": "<p>调整类型</p>"
+            "description": "<p>调整类型  ADD(增加) SUB(减少)</p>"
           },
           {
             "group": "Parameter",
@@ -2147,7 +2147,7 @@
             "type": "string",
             "optional": false,
             "field": "query.status",
-            "description": "<p>状态</p>"
+            "description": "<p>状态  PENDING_CHECK(待审核) FINISHED(已完成) CLOSED(已关闭)</p>"
           }
         ]
       },
@@ -2195,7 +2195,7 @@
             "type": "string",
             "optional": false,
             "field": "data.list.changeType",
-            "description": "<p>调整类型</p>"
+            "description": "<p>调整类型  ADD(增加) SUB(减少)</p>"
           },
           {
             "group": "Success 200",
@@ -2237,7 +2237,7 @@
             "type": "string",
             "optional": false,
             "field": "data.list.customType",
-            "description": "<p>客户类型</p>"
+            "description": "<p>客户类型  BIG_CUSTOM(大客户) DEALER(经销商)</p>"
           },
           {
             "group": "Success 200",
@@ -2258,7 +2258,7 @@
             "type": "string",
             "optional": false,
             "field": "data.list.status",
-            "description": "<p>状态</p>"
+            "description": "<p>状态 PENDING_CHECK(待审核) FINISHED(已完成) CLOSED(已关闭)</p>"
           },
           {
             "group": "Success 200",
