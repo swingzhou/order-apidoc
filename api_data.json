@@ -1566,7 +1566,7 @@
             "type": "string",
             "optional": false,
             "field": "customType",
-            "description": "<p>客户类型</p>"
+            "description": "<p>客户类型 BIG_CUSTOM(大客户)DEALER(经销商)</p>"
           },
           {
             "group": "Parameter",
@@ -1621,7 +1621,7 @@
             "type": "string",
             "optional": false,
             "field": "data.changeType",
-            "description": "<p>调整类型</p>"
+            "description": "<p>调整类型 ADD(增加) SUB(减少)</p>"
           },
           {
             "group": "Success 200",
@@ -1670,7 +1670,7 @@
             "type": "string",
             "optional": false,
             "field": "data.status",
-            "description": "<p>状态</p>"
+            "description": "<p>状态 PENDING_CHECK(待审核) FINISHED(已完成) CLOSED(已关闭)</p>"
           },
           {
             "group": "Success 200",
@@ -1922,7 +1922,7 @@
             "type": "string",
             "optional": false,
             "field": "data.customType",
-            "description": "<p>客户类型</p>"
+            "description": "<p>客户类型 BIG_CUSTOM(大客户)DEALER(经销商)</p>"
           },
           {
             "group": "Success 200",
@@ -2455,14 +2455,14 @@
             "type": "string",
             "optional": false,
             "field": "query.changeOrigin",
-            "description": "<p>变更来源</p>"
+            "description": "<p>变更来源  SYSTEM_BILL(系統单据)MANUAL_ADJUST(手动调整) ORDER_PAY(订单回款) ORDER_BACK(订单退款)</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "query.changeType",
-            "description": "<p>变更类型</p>"
+            "description": "<p>变更类型 ADD(增加) SUB(减少)</p>"
           }
         ]
       },
@@ -2538,14 +2538,14 @@
             "type": "string",
             "optional": false,
             "field": "data.list.changeOrigin",
-            "description": "<p>变更来源</p>"
+            "description": "<p>变更来源 SYSTEM_BILL(系統单据)MANUAL_ADJUST(手动调整) ORDER_PAY(订单回款) ORDER_BACK(订单退款)</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
             "field": "data.list.changeType",
-            "description": "<p>变更类型</p>"
+            "description": "<p>变更类型 ADD(增加) SUB(减少)</p>"
           },
           {
             "group": "Success 200",
@@ -2790,7 +2790,7 @@
             "type": "string",
             "optional": false,
             "field": "data.list.customType",
-            "description": "<p>客户类型</p>"
+            "description": "<p>客户类型 BIG_CUSTOM(大客户)DEALER(经销商)</p>"
           },
           {
             "group": "Success 200",
@@ -2986,7 +2986,7 @@
             "type": "string",
             "optional": false,
             "field": "data.changeType",
-            "description": "<p>调整类型</p>"
+            "description": "<p>调整类型 ADD(增加) SUB(减少)</p>"
           },
           {
             "group": "Success 200",
@@ -3021,7 +3021,7 @@
             "type": "string",
             "optional": false,
             "field": "data.status",
-            "description": "<p>状态</p>"
+            "description": "<p>状态 PENDING_CHECK(待审核) FINISHED(已完成) CLOSED(已关闭)</p>"
           },
           {
             "group": "Success 200",
