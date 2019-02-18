@@ -2322,7 +2322,7 @@
             "type": "string",
             "optional": false,
             "field": "query.queryFieldName",
-            "description": "<p>分页查询字段名称</p>"
+            "description": "<p>分页查询字段名称 name 经销商/大客户名称 num 经销商/大客户编号 createMan 申请人</p>"
           },
           {
             "group": "Parameter",
@@ -2411,22 +2411,15 @@
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.list.customId",
-            "description": "<p>客户标识</p>"
+            "field": "data.list.name",
+            "description": "<p>经销商/大客户名称</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.list.customName",
-            "description": "<p>客户名称</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "string",
-            "optional": false,
-            "field": "data.list.customType",
-            "description": "<p>客户类型  BIG_CUSTOM(大客户) DEALER(经销商)</p>"
+            "field": "data.list.num",
+            "description": "<p>经销商/大客户编号</p>"
           },
           {
             "group": "Success 200",
@@ -2475,7 +2468,7 @@
       "examples": [
         {
           "title": "Success-Response: ",
-          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T06:58:57.631+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"id\": \"5c480edebbe48705c4bd32d8\",\n         \"customName\": \"依赖大客户、经销商\",\n         \"customId\": null,\n         \"customType\": null,\n         \"changeType\": \"ADD\",\n         \"money\": 1000,\n         \"createMan\": \"1207d2b61cde9000\",\n         \"createManName\": \"xuqian\",\n         \"createDate\": 1548226270667,\n         \"status\": \"PENDING_CHECK\"\n       }\n     ],\n     \"count\": 1\n   }\n}",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T06:58:57.631+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"id\": \"5c480edebbe48705c4bd32d8\",\n         \"name\": \"依赖大客户、经销商\",\n         \"num\": \"1111\",\n         \"changeType\": \"ADD\",\n         \"money\": 1000,\n         \"createMan\": \"1207d2b61cde9000\",\n         \"createManName\": \"xuqian\",\n         \"createDate\": 1548226270667,\n         \"status\": \"PENDING_CHECK\"\n       }\n     ],\n     \"count\": 1\n   }\n}",
           "type": "json"
         }
       ]
@@ -2903,7 +2896,7 @@
             "type": "string",
             "optional": true,
             "field": "query.queryFieldName",
-            "description": "<p>分页查询字段名称</p>"
+            "description": "<p>分页查询字段名称   name 经销商/大客户名称 num 经销商/大客户编号</p>"
           },
           {
             "group": "Parameter",
@@ -2964,22 +2957,15 @@
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.list.customId",
-            "description": "<p>客户标识</p>"
+            "field": "data.list.num",
+            "description": "<p>经销商/大客户编号</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.list.customName",
-            "description": "<p>客户名称</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "string",
-            "optional": false,
-            "field": "data.list.customType",
-            "description": "<p>客户类型 BIG_CUSTOM(大客户)DEALER(经销商)</p>"
+            "field": "data.list.name",
+            "description": "<p>经销商/大客户名称</p>"
           },
           {
             "group": "Success 200",
@@ -3021,7 +3007,7 @@
       "examples": [
         {
           "title": "Success-Response: ",
-          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T07:43:15.558+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"id\": \"5c40425723b4eb0f081cedf9\",\n         \"customName\": \"依赖经销商大客户\",\n         \"customId\": \"string\",\n         \"customType\": \"BIG_CUSTOM\",\n         \"amount\": 0,\n         \"updateDate\": 0\n       },\n       {\n         \"id\": \"5c40456323b4eb2f844e5d38\",\n         \"customName\": \"依赖经销商大客户\",\n         \"customId\": \"string\",\n         \"customType\": \"BIG_CUSTOM\",\n         \"amount\": 0,\n         \"updateDate\": 0\n       }\n     ],\n     \"count\": 14\n   }\n}",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T07:43:15.558+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"id\": \"5c40425723b4eb0f081cedf9\",\n         \"name\": \"依赖经销商大客户\",\n         \"num\": \"string\",\n         \"amount\": 0,\n         \"updateDate\": 0\n       },\n       {\n         \"id\": \"5c40456323b4eb2f844e5d38\",\n         \"customName\": \"依赖经销商大客户\",\n         \"customId\": \"string\",\n         \"customType\": \"BIG_CUSTOM\",\n         \"amount\": 0,\n         \"updateDate\": 0\n       }\n     ],\n     \"count\": 14\n   }\n}",
           "type": "json"
         }
       ]
