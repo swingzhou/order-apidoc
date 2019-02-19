@@ -7540,7 +7540,7 @@ define({ "api": [
             "type": "string",
             "optional": true,
             "field": "query.queryFieldName",
-            "description": "<p>分页查询字段名称</p>"
+            "description": "<p>分页查询字段名称 accountPeriodId 账期编号/name 账期方式 orderId 来源订单/customName 经销商/大客户名称</p>"
           },
           {
             "group": "Parameter",
