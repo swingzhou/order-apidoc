@@ -1955,6 +1955,13 @@
             "group": "errorCode",
             "type": "string",
             "optional": false,
+            "field": "20112016",
+            "description": "<p>大客户/经销商未关联资金池</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
             "field": "000000",
             "description": "<p>请求成功</p>"
           }
@@ -3415,28 +3422,28 @@
             "type": "string",
             "optional": false,
             "field": "20110001",
-            "description": "<p>marketcenter is empty</p>"
+            "description": "<p>营销中心对象为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20110002",
-            "description": "<p>marketcenter add  fail</p>"
+            "description": "<p>添加营销中心失败</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20110006",
-            "description": "<p>marketcenter name is empty</p>"
+            "description": "<p>营销中心名称为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20110007",
-            "description": "<p>marketcenter code is empty</p>"
+            "description": "<p>营销中心编号为空</p>"
           },
           {
             "group": "errorCode",
@@ -3576,21 +3583,21 @@
             "type": "string",
             "optional": false,
             "field": "20110003",
-            "description": "<p>marketcenter id is empty</p>"
+            "description": "<p>营销中心标识为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20110011",
-            "description": "<p>fail to marketcenter delete</p>"
+            "description": "<p>删除营销中心失败</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20110012",
-            "description": "<p>id association cannot be deleted</p>"
+            "description": "<p>营销中心已被关联无法删除</p>"
           },
           {
             "group": "errorCode",
@@ -4024,14 +4031,14 @@
             "type": "string",
             "optional": false,
             "field": "20110004",
-            "description": "<p>marketcenter query fail</p>"
+            "description": "<p>查询营销中心失败</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20110008",
-            "description": "<p>marketcenter id is empty</p>"
+            "description": "<p>营销中心id为空</p>"
           },
           {
             "group": "errorCode",
@@ -4269,21 +4276,21 @@
             "type": "string",
             "optional": false,
             "field": "20110001",
-            "description": "<p>marketcenter is empty</p>"
+            "description": "<p>营销中心对象为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20110009",
-            "description": "<p>marketcenter queryFieldName id empty</p>"
+            "description": "<p>查询营销中心条件为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20110010",
-            "description": "<p>marketcenter fail to page query</p>"
+            "description": "<p>分页查询营销中心失败</p>"
           },
           {
             "group": "errorCode",
@@ -4542,21 +4549,21 @@
             "type": "string",
             "optional": false,
             "field": "20110001",
-            "description": "<p>marketcenter is empty</p>"
+            "description": "<p>营销中心对象为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20110005",
-            "description": "<p>marketcenter update fail</p>"
+            "description": "<p>编辑营销中心失败</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20110008",
-            "description": "<p>marketcenter id is empty</p>"
+            "description": "<p>营销中心id为空</p>"
           },
           {
             "group": "errorCode",
@@ -4617,6 +4624,447 @@
         {
           "title": "Header-Example:",
           "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/v1/xlink-order-rest/marketCenterUser/checkBigCustomerRelateInfo",
+    "title": "校验哪些大客户已被关联",
+    "name": "checkBigCustomerRelateInfo",
+    "group": "MarketCenterUserManagerController",
+    "description": "<p>校验哪些大客户已被关联</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "array(string)",
+            "optional": false,
+            "field": "no-name",
+            "description": "<p>大客户标识数组</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "[\n  \"string\"\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array(string)",
+            "optional": false,
+            "field": "data",
+            "description": "<p>被关联的大客户标识数组</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "{\n  \"code\": \"string\",\n  \"data\": [\n    \"string\"\n  ],\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-02-20T07:17:27.968Z\",\n  \"status\": \"string\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/MarketCenterUserManagerController.java",
+    "groupTitle": "MarketCenterUserManagerController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ],
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/v1/xlink-order-rest/marketCenterUser/cheackDealerRelateInfo",
+    "title": "校验哪些经销商已被关联",
+    "name": "checkDealerRelateInfo",
+    "group": "MarketCenterUserManagerController",
+    "description": "<p>校验哪些经销商已被关联</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "array(string)",
+            "optional": false,
+            "field": "no-name",
+            "description": "<p>经销商标识数组</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "[\n  \"string\"\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array(string)",
+            "optional": false,
+            "field": "data",
+            "description": "<p>被关联的经销商标识数组</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "{\n  \"code\": \"string\",\n  \"data\": [\n    \"string\"\n  ],\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-02-20T07:17:27.968Z\",\n  \"status\": \"string\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/MarketCenterUserManagerController.java",
+    "groupTitle": "MarketCenterUserManagerController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ],
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/v1/xlink-order-rest/marketCenterUser/cheackPersonRelateInfo",
+    "title": "校验哪些人员已被关联",
+    "name": "checkPersonRelateInfo",
+    "group": "MarketCenterUserManagerController",
+    "description": "<p>校验哪些人员已被关联</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "array(string)",
+            "optional": false,
+            "field": "no-name",
+            "description": "<p>人员数组</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "[\n  \"string\"\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array(string)",
+            "optional": false,
+            "field": "data",
+            "description": "<p>被关联的人员数组</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "{\n  \"code\": \"string\",\n  \"data\": [\n    \"string\"\n  ],\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-02-20T07:17:27.968Z\",\n  \"status\": \"string\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/MarketCenterUserManagerController.java",
+    "groupTitle": "MarketCenterUserManagerController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ],
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
           "type": "json"
         }
       ]
@@ -4702,15 +5150,15 @@
             "group": "errorCode",
             "type": "string",
             "optional": false,
-            "field": "20111002",
-            "description": "<p>empty market center user ids</p>"
+            "field": "20111010",
+            "description": "<p>营销中心客户标识为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
-            "field": "20111001",
-            "description": "<p>fail to delete market center user</p>"
+            "field": "20111011",
+            "description": "<p>删除营销中心关联大客户失败</p>"
           },
           {
             "group": "errorCode",
@@ -4856,15 +5304,15 @@
             "group": "errorCode",
             "type": "string",
             "optional": false,
-            "field": "20111002",
-            "description": "<p>empty market center user ids</p>"
+            "field": "20111008",
+            "description": "<p>营销中心经销商标识为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
-            "field": "20111001",
-            "description": "<p>fail to delete market center user</p>"
+            "field": "20111009",
+            "description": "<p>删除营销中心关联经销商失败</p>"
           },
           {
             "group": "errorCode",
@@ -5011,14 +5459,14 @@
             "type": "string",
             "optional": false,
             "field": "20111002",
-            "description": "<p>empty market center user ids</p>"
+            "description": "<p>营销中心用户标识为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20111001",
-            "description": "<p>fail to delete market center user</p>"
+            "description": "<p>删除营销中心关联人员失败</p>"
           },
           {
             "group": "errorCode",
@@ -5298,21 +5746,21 @@
             "type": "string",
             "optional": false,
             "field": "20110009",
-            "description": "<p>marketcenter queryFieldName id empty</p>"
+            "description": "<p>查询营销中心条件为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20110008",
-            "description": "<p>marketcenter id is empty</p>"
+            "description": "<p>查询营销中心条件为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20113003",
-            "description": "<p>fail to list market center customers</p>"
+            "description": "<p>分页查询营销中心大客户失败</p>"
           },
           {
             "group": "errorCode",
@@ -5592,21 +6040,21 @@
             "type": "string",
             "optional": false,
             "field": "20110008",
-            "description": "<p>marketcenter id is empty</p>"
+            "description": "<p>营销中心标识为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20110009",
-            "description": "<p>marketcenter queryFieldName id empty</p>"
+            "description": "<p>查询营销中心条件为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20112005",
-            "description": "<p>fail to list market center dealers</p>"
+            "description": "<p>分页查询营销中心关联经销商失败</p>"
           },
           {
             "group": "errorCode",
@@ -5879,21 +6327,21 @@
             "type": "string",
             "optional": false,
             "field": "20110008",
-            "description": "<p>marketcenter id is empty</p>"
+            "description": "<p>营销中心id为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20110009",
-            "description": "<p>marketcenter queryFieldName id empty</p>"
+            "description": "<p>查询营销中心条件为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20111005",
-            "description": "<p>fail to list market center persons</p>"
+            "description": "<p>分页查询营销中心人员失败</p>"
           },
           {
             "group": "errorCode",
@@ -6166,21 +6614,21 @@
             "type": "string",
             "optional": false,
             "field": "20110008",
-            "description": "<p>marketcenter id is empty</p>"
+            "description": "<p>营销中心id为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20113001",
-            "description": "<p>exist empty custom id</p>"
+            "description": "<p>客户标识为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20111007",
-            "description": "<p>fail to relation market center big customer</p>"
+            "description": "<p>关联营销中心大客户失败</p>"
           },
           {
             "group": "errorCode",
@@ -6460,28 +6908,28 @@
             "type": "string",
             "optional": false,
             "field": "20112001",
-            "description": "<p>marketcenterdealer is empty</p>"
+            "description": "<p>营销中心经销商对象为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20112002",
-            "description": "<p>marketcenter id is empty</p>"
+            "description": "<p>营销中心标识为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20112003",
-            "description": "<p>dealer id is empty</p>"
+            "description": "<p>经销商标识为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20112004",
-            "description": "<p>fail to list market center dealers</p>"
+            "description": "<p>营销中心关联经销商失败</p>"
           },
           {
             "group": "errorCode",
@@ -6705,21 +7153,21 @@
             "type": "string",
             "optional": false,
             "field": "20111001",
-            "description": "<p>marketcenterperson is empty</p>"
+            "description": "<p>营销中心人员对象为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20111002",
-            "description": "<p>marketcenter id is empty</p>"
+            "description": "<p>营销中心id为空</p>"
           },
           {
             "group": "errorCode",
             "type": "string",
             "optional": false,
             "field": "20111004",
-            "description": "<p>fail to relation market center person</p>"
+            "description": "<p>关联营销中心人员失败</p>"
           },
           {
             "group": "errorCode",
