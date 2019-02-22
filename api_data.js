@@ -5534,6 +5534,244 @@ define({ "api": [
   },
   {
     "type": "POST",
+    "url": "/v1/xlink-order-rest/marketCenterUser/listDealers",
+    "title": "查询经销商列表",
+    "name": "listDealers",
+    "group": "MarketCenterUserManagerController",
+    "description": "<p>查询经销商列表</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "page",
+            "description": "<p>分页</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "query",
+            "description": "<p>查询对象</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "array(string)",
+            "optional": true,
+            "field": "query.marketCenterIds",
+            "description": "<p>营销中心标识数组</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "query.queryFieldName",
+            "description": "<p>查询字段名称 dealerCode编码/dealerName名称</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "query.queryValue",
+            "description": "<p>查询值</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "size",
+            "description": "<p>分页大小</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "array(object)",
+            "optional": false,
+            "field": "sort",
+            "description": "<p>排序对象</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n  \"page\": 1,\n  \"query\": {\n    \"marketCenterIds\": [\n      \"string\"\n    ],\n    \"queryFieldName\": \"string\",\n    \"queryValue\": \"string\"\n  },\n  \"size\": 10,\n  \"sort\": [\n    {\n      \"createDate\": \"desc\"\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>返回数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.count",
+            "description": "<p>总数</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array(object)",
+            "optional": false,
+            "field": "data.list",
+            "description": "<p>数据列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.dealerCode",
+            "description": "<p>经销商编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.dealerId",
+            "description": "<p>经销商id</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.dealerName",
+            "description": "<p>经销商名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.marketCenterId",
+            "description": "<p>营销中心id</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.marketCenterName",
+            "description": "<p>营销中心名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "{\n  \"code\": \"string\",\n  \"data\": {\n    \"count\": 0,\n    \"list\": [\n      {\n        \"dealerCode\": \"string\",\n        \"dealerId\": \"string\",\n        \"dealerName\": \"string\",\n        \"marketCenterId\": \"string\",\n        \"marketCenterName\": \"string\"\n      }\n    ],\n  },\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-02-22T10:31:55.960Z\",\n  \"status\": \"string\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/MarketCenterUserManagerController.java",
+    "groupTitle": "MarketCenterUserManagerController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ],
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
     "url": "/v1/xlink-order-rest/marketCenterUser/listMarketCenterCustomers",
     "title": "分页查询营销中心大客户列表",
     "name": "listMarketCenterCustomers",
@@ -5881,7 +6119,7 @@ define({ "api": [
             "type": "string",
             "optional": true,
             "field": "query.queryFieldName",
-            "description": "<p>查询字段名  dealerName/contactMan/contactNumber/dealerCode</p>"
+            "description": "<p>查询字段名  dealerName/contactMan/contactNumber</p>"
           },
           {
             "group": "Parameter",
@@ -7708,7 +7946,7 @@ define({ "api": [
             "type": "string",
             "optional": true,
             "field": "query.status",
-            "description": "<p>订单账期明细状态</p>"
+            "description": "<p>订单账期明细状态  NOT_START 未开始/FINISHED 已完成/NEAR_BACK 近期回款/EXPIRE 已逾期</p>"
           }
         ]
       },
@@ -7762,22 +8000,8 @@ define({ "api": [
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "data.list.customId",
-            "description": "<p>客户标识</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "string",
-            "optional": false,
             "field": "data.list.customName",
             "description": "<p>客户名称</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "string",
-            "optional": false,
-            "field": "data.list.customType",
-            "description": "<p>客户类型</p>"
           },
           {
             "group": "Success 200",
@@ -7819,7 +8043,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "data.list.status",
-            "description": "<p>订单账期明细状态</p>"
+            "description": "<p>订单账期明细状态 NOT_START 未开始/FINISHED 已完成/NEAR_BACK 近期回款/EXPIRE 已逾期</p>"
           },
           {
             "group": "Success 200",
@@ -7847,7 +8071,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response: ",
-          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T03:39:47.918+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"orderAccountId\": \"5c443f7223b4eb159013b21e\",\n         \"acceptMoney\": 0,\n         \"payRadio\": 55.5,\n         \"periodOrder\": 0,\n         \"payDate\": 0,\n         \"name\": \"账期名称\",\n         \"customId\": null,\n         \"customType\": null,\n         \"customName\": null,\n         \"status\": \"FINISHED\"\n       }\n     ],\n     \"count\": 3,\n     \"per_page\": 10\n   }\n}",
+          "content": "HTTP/1.1 200 OK \n{\n   \"responseTime\": \"2019-01-23T03:39:47.918+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": {\n     \"list\": [\n       {\n         \"orderAccountId\": \"5c443f7223b4eb159013b21e\",\n         \"acceptMoney\": 0,\n         \"payRadio\": 55.5,\n         \"periodOrder\": 0,\n         \"payDate\": 0,\n         \"name\": \"账期名称\",\n         \"customName\": null,\n         \"status\": \"FINISHED\"\n       }\n     ],\n     \"count\": 3,\n     \"per_page\": 10\n   }\n}",
           "type": "json"
         }
       ]
