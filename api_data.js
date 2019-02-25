@@ -53,6 +53,13 @@ define({ "api": [
             "group": "Parameter",
             "type": "string",
             "optional": false,
+            "field": "accountPeriodDto.accountPeriodCustomDtos.customCode",
+            "description": "<p>客户编码</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
             "field": "accountPeriodDto.accountPeriodCustomDtos.customType",
             "description": "<p>客户类型(&quot;BIG_CUSTOM&quot;/大客户，&quot;DEALER&quot;/经销商)</p>"
           },
@@ -866,6 +873,13 @@ define({ "api": [
             "optional": true,
             "field": "data.bigCustomVos.customName",
             "description": "<p>客户名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": true,
+            "field": "data.bigCustomVos.customCode",
+            "description": "<p>客户编码</p>"
           },
           {
             "group": "Success 200",
