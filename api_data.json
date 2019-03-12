@@ -3902,6 +3902,167 @@
     }
   },
   {
+    "type": "POST",
+    "url": "/v1/xlink-order-rest/marketCenterManager/findMarketCenterMangerByCode/{code}",
+    "title": "根据营销中心编号查询营销中心",
+    "name": "findMarketCenterMangerByCode",
+    "group": "MarketCenterManagerController",
+    "description": "<p>根据营销中心编号查询营销中心</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>营销中心编号</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>返回对象</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "HTTP/1.1 200 OK\n{\n {\n   \"responseTime\": \"2019-03-12T03:07:48.390+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": true\n }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20110007",
+            "description": "<p>营销中心编号为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20110004",
+            "description": "<p>查询营销中心失败</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20110017",
+            "description": "<p>营销中心编号已存在</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ],
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/MarketCenterManagerController.java",
+    "groupTitle": "MarketCenterManagerController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
     "type": "GET",
     "url": "/v1/xlink-order-rest/marketCenterManager/findMarketCenterMangerById/{id}",
     "title": "根据id查询营销中心",
@@ -4053,6 +4214,167 @@
             "optional": false,
             "field": "20110008",
             "description": "<p>营销中心id为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ],
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/MarketCenterManagerController.java",
+    "groupTitle": "MarketCenterManagerController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/v1/xlink-order-rest/marketCenterManager/findMarketCenterMangerByName/{name}",
+    "title": "根据营销中心名称查询营销中心",
+    "name": "findMarketCenterMangerByName",
+    "group": "MarketCenterManagerController",
+    "description": "<p>根据营销中心名称查询营销中心</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>营销中心名称</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>返回对象</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "HTTP/1.1 200 OK\n{\n {\n   \"responseTime\": \"2019-03-12T03:07:48.390+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": true\n }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20110006",
+            "description": "<p>营销中心名称为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20110004",
+            "description": "<p>查询营销中心失败</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20110016",
+            "description": "<p>营销中心名称已存在</p>"
           },
           {
             "group": "errorCode",
