@@ -3868,6 +3868,196 @@ define({ "api": [
   },
   {
     "type": "POST",
+    "url": "/v1/xlink-order-rest/marketCenterManager/findCurrMarketCenter",
+    "title": "根据当前登录人查询营销中心",
+    "name": "findCurrMarketCenter",
+    "group": "MarketCenterManagerController",
+    "description": "<p>根据当前登录人查询营销中心</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>营销中心数组</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.code",
+            "description": "<p>营销中心编号</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.contactNumber",
+            "description": "<p>联系电话</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.createDate",
+            "description": "<p>创建日期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.createMan",
+            "description": "<p>创建者标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.id",
+            "description": "<p>营销中心标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.name",
+            "description": "<p>营销中心名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.responsibleMan",
+            "description": "<p>负责人</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "data.updateDate",
+            "description": "<p>更新日期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.updateMan",
+            "description": "<p>更新者标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "HTTP/1.1 200 OK\n{\n   \"responseTime\": \"2019-01-03T08:29:29.448+0000\",\n   \"code\": \"000000\",\n   \"status\": \"200\",\n   \"msg\": \"请求成功\",\n   \"data\": [{\n       \"name\": \"张三\",\n       \"code\": \"云智易01\",\n       \"responsibleMan\": \"李四\",\n       \"contactNumber\": \"18273418265\",\n       \"id\": \"5c2dbf046f729b63c032aa67\",\n       \"createDate\": 1546501892048,\n       \"createMan\": \"-1\",\n       \"updateDate\": null,\n       \"updateMan\": null\n   }]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/order/rest/controller/MarketCenterManagerController.java",
+    "groupTitle": "MarketCenterManagerController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ],
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
     "url": "/v1/xlink-order-rest/marketCenterManager/findMarketCenterByDealerId/{dealerId}",
     "title": "根据经销商标识查询营销中心",
     "name": "findMarketCenterByDealerId",
@@ -4092,7 +4282,7 @@ define({ "api": [
   },
   {
     "type": "POST",
-    "url": "/v1/xlink-order-rest/marketCenterManager/findMarketCenterByPersonId/{dealerId}",
+    "url": "/v1/xlink-order-rest/marketCenterManager/findMarketCenterByPersonId/{personId}",
     "title": "根据成员标识查询营销中心",
     "name": "findMarketCenterByPersonId",
     "group": "MarketCenterManagerController",
